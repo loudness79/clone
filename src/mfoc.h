@@ -35,8 +35,6 @@
 // Number of sets with 32b keys
 #define DEFAULT_SETS_NR         5
 
-#define odd_parity(i) (( (i) ^ (i)>>1 ^ (i)>>2 ^ (i)>>3 ^ (i)>>4 ^ (i)>>5 ^ (i)>>6 ^ (i)>>7 ^ 1) & 0x01)
-
 typedef struct {
   uint8_t KeyA[6];
   uint8_t KeyB[6];
