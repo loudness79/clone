@@ -1198,15 +1198,15 @@ uint32_t median(denonce d)
 
 int compar_int(const void *a, const void *b)
 {
-    if (*(uint64_t *)b == *(uint64_t *)a) return 0;
-    if (*(uint64_t *)b < * (uint64_t *)a) return 1;
-    return -1;
+  uint64_t m = *(uint64_t *)a, n = *(uint64_t *)b;
+  return (m > n) - (m < n);
 }
 
 // Compare countKeys structure
 int compar_special_int(const void *a, const void *b)
 {
-  return (((countKeys *)b)->count - ((countKeys *)a)->count);
+  int m = ((countKeys *)a)->count, n = ((countKeys *)b)->count;
+  return (m < n) - (m > n);
 }
 
 countKeys *uniqsort(uint64_t *possibleKeys, uint32_t size)
