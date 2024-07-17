@@ -686,7 +686,8 @@ int main(int argc, char *const argv[])
           // Error, now try read() with B key
           if (res != NFC_ERFTRANS) {
             nfc_perror(r.pdi, "nfc_initiator_mifare_cmd");
-            goto error;
+            // fix here because of better results 
+            //goto error;
           }
           mf_configure(r.pdi);
           mf_anticollision(t, r);
